@@ -18,7 +18,7 @@ $ xhost +
 - running weston
 
 ~~~
-$ weton --width=800 --height=600 &
+$ weston --width=800 --height=600 &
 ~~~
 
 ## How to use
