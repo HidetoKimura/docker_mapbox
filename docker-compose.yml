@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - DOCKER_UID=${LOCAL_UID}
+        - DOCKER_GID=${LOCAL_GID}  
+    privileged: true
+    tty: true
+    env_file:
+      - ./settings/default.env  
+    devices:
+     - "/dev/dri:/dev/dri"
+     - "/dev/snd:/dev/snd"
+    volumes:
+      - /tmp/:/tmp/
+      - /run/user:/run/user
+      - /home/${USER}/${WORK_DIR}:/home/user/work
+
+
